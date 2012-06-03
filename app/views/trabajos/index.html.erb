@@ -17,20 +17,18 @@
     <td><%= trabajo.Descripcion %></td>
     <td><%= trabajo.Estado %></td>
     <td><%= trabajo.Pago %></td>
-    <%if can? :read, Trabajo %>
+
         <td><%= link_to 'Show', trabajo %></td>
-    <%end%>
-    <%if can? :update, Trabajo %>    
+ 
         <td><%= link_to 'Edit', edit_trabajo_path(trabajo) %></td>
-    <%end%>
-    <%if can? :destroy, Trabajo %>
+  
     <td><%= link_to 'Destroy', trabajo, confirm: 'Are you sure?', method: :delete %></td>
-    <%end %>
+
   </tr>
 <% end %>
 </table>
 
 <br />
-<%if can? :create, Trabajo %>
+
   <%= link_to 'New Trabajo', new_trabajo_path %>
-<%end%>
+

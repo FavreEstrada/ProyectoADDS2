@@ -17,20 +17,18 @@
     <td><%= servicio.CostoInstalacion %></td>
     <td><%= servicio.PrecioMensual %></td>
     <td><%= servicio.Descripcion %></td>
-    <%if can? :read, Servicio %>
+  
         <td><%= link_to 'Show', servicio %></td>
-    <%end%>
-    <%if can? :update, Servicio %>
+
         <td><%= link_to 'Edit', edit_servicio_path(servicio) %></td>
-    <%end%>
-    <% if can? :destroy, Servicio %>
+
     <td><%= link_to 'Destroy', servicio, confirm: 'Are you sure?', method: :delete %></td>
-    <%end%>
+ 
   </tr>
 <% end %>
 </table>
 
 <br />
-<%if can? :create, Servicio %>
+
   <%= link_to 'New Servicio', new_servicio_path %>
-<%end%>
+

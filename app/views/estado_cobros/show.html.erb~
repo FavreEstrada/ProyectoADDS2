@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @estado_cobro.Nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @estado_cobro.Descripcion %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @estado_cobro.Estado %>
+</p>
+
+<% if can? :update, EstadoCobro %>
+    <%= link_to 'Edit', edit_estado_cobro_path(@estado_cobro) %> |
+<%end%>
+<%= link_to 'Back', estado_cobros_path %>

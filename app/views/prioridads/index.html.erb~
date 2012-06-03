@@ -1,0 +1,34 @@
+<h1>Listing prioridads</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Estado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @prioridads.each do |prioridad| %>
+  <tr>
+    <td><%= prioridad.Nombre %></td>
+    <td><%= prioridad.Descripcion %></td>
+    <td><%= prioridad.Estado %></td>
+    <%if can? :read, Prioridad %>
+        <td><%= link_to 'Show', prioridad %></td>
+    <%end%>
+    <% if can? :update, Prioridad %>
+        <td><%= link_to 'Edit', edit_prioridad_path(prioridad) %></td>
+    <%end%>
+    <%if can? :destroy, Prioridad %>
+        <td><%= link_to 'Destroy', prioridad, confirm: 'Are you sure?', method: :delete %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%if can? :create, Prioridad %>
+  <%= link_to 'New Prioridad', new_prioridad_path %>
+<%end%>

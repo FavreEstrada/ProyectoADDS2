@@ -1,19 +1,143 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="es-ES">
 <head>
-  <title>ProyectoADDS2</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="es" />
+
+	<title>ProyectoADDS2</title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
 </head>
-<bodyi
-  <% if user_signed_in?%>>
-    <%= link_to 'Cerrar sesion', destroy_user_session_path, :method => "delete"%>
-  <%else%>
-     <p> <%= link_to 'Sign_in', new_user_session_path %> | <%= link_to 'Sign_    up', new_user_registration_path %>
-  <%end%>
-  
-  <%= yield %>
+<body style= "background-color: #121212"> 
+
+	<div id="contenedor">
+
+	<div id="cabecera">
+		<ul id="menu">
+			<li><a href="#">Clientes</a>
+				<ul>
+					<li> <a href="#">Agregar Cliente</a></li>
+					<li> <a href="#">Agregar Solicitud Rechazada</a></li>
+				    	<li> <a href="#">Buscar/Modificar Cliente</a></li>
+				</ul>
+			</li>
+			
+			<li><a href="#">Cobros</a>
+				<ul>
+					<li><a href="#">Cobros a Realizar</a></li>
+				    	<li><a href="#">Modificar un Cobro</a></li>
+				</ul>				
+			</li>
+
+			<li><a href="#">Ordenes de Trabajo</a>
+				<ul>
+					<li><a href="#">Agregar Orden de Trabajo</a></li>
+					<li><a href="#">Modificar una Orden de Trabajo</a></li>
+					<li><a href="#">Ver Ordenes de Trabajo Pendientes</a></li>
+				</ul>				
+			</li>
+
+			<li><a href="#">Reportes</a>
+				<ul>
+					<li><a href="#">Información de Clientes</a></li>
+					<li><a href="#">Información de Cobros</a></li>
+					<li><a href="#">Información de Ordenes de Trabajo</a></li>
+					<li><a href="#">Solicitudes Rechazadas</a></li>
+				</ul>				
+			</li>
+
+			<li><a href="#">Parametrizaciones</a>
+				<ul>
+					<li><a href="#">Barrios y Colonias</a>
+						<ul>
+							<li><%= link_to 'Agregar Barrio o Colonia', new_barrio_path %></li>
+							<li><%= link_to 'Modificar Barrio o Colonia', barrios_path %></li>
+						</ul>
+					</li>
+					<li><a href="#">Cobros</a>
+						<ul>
+							<li><a href="#">Agregar Cobrador</a></li>
+							<li><%= link_to 'Agregar Estado de Cobro', new_estado_cobro_path %></li>
+							<li><a href="#">Modificar Cobrador</a></li>
+							<li><%= link_to 'Modificar Estado de Cobro', estado_cobros_path %></li>
+						</ul>
+					</li>
+					<li><a href="#">Clientes</a>
+						<ul>
+							<li><%= link_to 'Agregar Estado del Cliente', new_estado_cliente_path %></li>
+							<li><%= link_to 'Agregar Tipo de Identificación', new_identificacion_path %></li>
+							<li><%= link_to 'Agregar Tipo de Personeria', new_personerium_path %></li>
+							<li><%= link_to 'Modificar Estado del Cliente', estado_clientes_path %></li>
+							<li><%= link_to 'Modificar Tipo de Identificación', identificacions_path %></li>
+							<li><%= link_to 'Modificar Tipo de Personeria', personeria_path %></li>
+						</ul>
+					</li>
+					<li><a href="#">Backups</a>
+						<ul>
+							<li><a href="#">Modificar Fecha de Backup</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Ordenes de Trabajo</a>
+						<ul>
+							<li><%= link_to 'Agregar Estado de Orden de Trabajo', new_estado_odt_path %></li>
+							<li><%= link_to 'Agregar Nivel de Prioridad', new_prioridad_path %></li>
+							<li><a href="#">Agregar Tecnico</a></li>
+							<li><%= link_to 'Agregar Tipo de Trabajo a Realizar', new_trabajo_path %></li>
+							<li><%= link_to 'Modificar Estado de Orden de Trabajo', estado_odts_path %></li>
+							<li><%= link_to 'Modificar Nivel de Prioridad', prioridads_path %></li>
+							<li><a href="#">Modificar Tecnico</a></li>
+							<li><%= link_to 'Modificar Tipo de Trabajo a Realizar', trabajos_path %></li>
+						</ul>
+					</li>
+					<li><a href="#">Pagos</a>
+						<ul>
+							<li><%= link_to 'Agregar Estado de Pago', new_estado_pago_path %></li>
+							<li><%= link_to 'Modificar Estado de Pago', estado_pagos_path %></li>
+							<li><a href="#">Modificar Fecha de Pago</a></li>
+							<li><a href="#">Modificar Precios</a></li>
+						</ul>					
+					</li>
+					<li><a href="#">Servicios</a>
+						<ul>
+							<li><%= link_to 'Agregar Servicio', new_servicio_path %></li>
+							<li><%= link_to 'Modificar Servicio', servicios_path %></li>
+						</ul>
+					</li>
+					<li><a href="#">Usuarios</a>
+						<ul>
+							<li><a href="#">Crear Perfil</a></li>
+							<li><a href="#">Crear Usuario</a></li>
+							<li><a href="#">Modificar Perfil</a></li>
+							<li><a href="#">Modificar Usuario</a></li>
+						</ul>
+					</li>
+				</ul>				
+			</li>
+		</ul>
+						
+	</div>
+
+
+		<div id="BarraDerecha">
+			<p> </p>	
+		</div>
+
+		<div id="contenidoCentral">
+			<%= yield %>
+		</div>
+
+		<div id="BarraIzquierda">
+			<p> </p>
+		</div>
+
+		</div>
+		<div id="piedepagina">
+			<p> PIE DE PAGINA ¿Donde estas?</p>
+		</div>
+
+	</div>
 
 </body>
 </html>

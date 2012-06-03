@@ -15,9 +15,9 @@
     <td><%= estado_pago.Nombre %></td>
     <td><%= estado_pago.Descripcion %></td>
     <td><%= estado_pago.Estado %></td>
-    <% if can? :read, EstadoPago %>
+
         <td><%= link_to 'Show', estado_pago %></td>
-    <%end%>
+
     <td><%= link_to 'Edit', edit_estado_pago_path(estado_pago) %></td>
     <td><%= link_to 'Destroy', estado_pago, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

@@ -1,0 +1,40 @@
+<h1>Listing parametros_generales</h1>
+
+<table>
+  <tr>
+    <th>Descuento</th>
+    <th>Isv</th>
+    <th>Fechabackup</th>
+    <th>Fechacorte</th>
+    <th>Fechapago</th>
+    <th>Horabackup</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @parametros_generales.each do |parametros_generale| %>
+  <tr>
+    <td><%= parametros_generale.Descuento %></td>
+    <td><%= parametros_generale.ISV %></td>
+    <td><%= parametros_generale.FechaBackup %></td>
+    <td><%= parametros_generale.FechaCorte %></td>
+    <td><%= parametros_generale.FechaPago %></td>
+    <td><%= parametros_generale.HoraBackup %></td>
+    <%if can? :read, ParametrosGenerale %>
+        <td><%= link_to 'Show', parametros_generale %></td>
+      <%end%>
+    <%if can? :update, ParametrosGenerale %>
+        <td><%= link_to 'Edit', edit_parametros_generale_path(parametros_generale) %></td>
+      <%end%>
+    <% if can? :destroy, ParametrosGenerale %>
+      <td><%= link_to 'Destroy', parametros_generale, confirm: 'Are you sure?', method: :delete %></td>
+    <%end%>
+    </tr>
+<% end %>
+</table>
+
+<br />
+<% if can? :create, ParametrosGenerale %>
+  <%= link_to 'New Parametros generale', new_parametros_generale_path %>
+<%end%>

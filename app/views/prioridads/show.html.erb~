@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @prioridad.Nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @prioridad.Descripcion %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @prioridad.Estado %>
+</p>
+
+<%if can? :update, Prioridad %>
+<%= link_to 'Edit', edit_prioridad_path(@prioridad) %> |
+<%end%>
+<%= link_to 'Back', prioridads_path %>

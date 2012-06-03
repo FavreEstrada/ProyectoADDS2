@@ -10,7 +10,7 @@
   <%= @identificacion.NumeroIdentificacion %>
 </p>
 
-<% if can? :update, Identificacion %>
+
     <%= link_to 'Edit', edit_identificacion_path(@identificacion) %> |
-<%end%>
+
 <%= link_to 'Back', identificacions_path %>

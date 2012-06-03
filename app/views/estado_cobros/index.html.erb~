@@ -1,0 +1,34 @@
+<h1>Listing estado_cobros</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Estado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @estado_cobros.each do |estado_cobro| %>
+  <tr>
+    <td><%= estado_cobro.Nombre %></td>
+    <td><%= estado_cobro.Descripcion %></td>
+    <td><%= estado_cobro.Estado %></td>
+    <% if can? :read, EstadoCobro%>
+        <td><%= link_to 'Show', estado_cobro %></td>
+      <%end%>
+    <%if can? :update, EstadoCobro%>
+        <td><%= link_to 'Edit', edit_estado_cobro_path(estado_cobro) %></td>
+    <%end%>
+    <% if can? :destroy, EstadoCobro %>
+        <td><%= link_to 'Destroy', estado_cobro, confirm: 'Are you sure?', method: :delete %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%if can? :create, EstadoCobro %>
+  <%= link_to 'New Estado cobro', new_estado_cobro_path %>
+<%end%>

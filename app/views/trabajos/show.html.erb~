@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Trabajo:</b>
+  <%= @trabajo.Trabajo %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @trabajo.Descripcion %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @trabajo.Estado %>
+</p>
+
+<p>
+  <b>Pago:</b>
+  <%= @trabajo.Pago %>
+</p>
+
+<% if can? :update, Trabajo %>
+  <%= link_to 'Edit', edit_trabajo_path(@trabajo) %> <%end%>|
+<%= link_to 'Back', trabajos_path %>

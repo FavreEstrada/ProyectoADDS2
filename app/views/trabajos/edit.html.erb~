@@ -1,0 +1,6 @@
+<h1>Editing trabajo</h1>
+
+<%= render 'form' %>
+<%if can? :read, Trabajo %>
+  <%= link_to 'Show', @trabajo %><%end%> |
+<%= link_to 'Back', trabajos_path %>

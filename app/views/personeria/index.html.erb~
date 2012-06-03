@@ -1,0 +1,34 @@
+<h1>Listing personeria</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Estado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @personeria.each do |personerium| %>
+  <tr>
+    <td><%= personerium.Nombre %></td>
+    <td><%= personerium.Descripcion %></td>
+    <td><%= personerium.Estado %></td>
+    <% if can? :read, Personerium %>
+        <td><%= link_to 'Show', personerium %></td>
+      <%end%>
+    <% if can? :update, Personerium %>
+        <td><%= link_to 'Edit', edit_personerium_path(personerium) %></td>
+    <%end %>
+    <% if can? :destroy, Personerium %>
+        <td><%= link_to 'Destroy', personerium, confirm: 'Are you sure?', method: :delete %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%if can? :create, Personerium %>
+  <%= link_to 'New Personerium', new_personerium_path %>
+<%end%>

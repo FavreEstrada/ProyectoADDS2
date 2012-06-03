@@ -15,20 +15,19 @@
     <td><%= barrio.Nombre %></td>
     <td><%= barrio.Abreviacion %></td>
     <td><%= barrio.Estado %></td>
-    <%if can? :read, Barrio%>
+    
       <td><%= link_to 'Show', barrio %></td>
-    <%end%>
-    <% if can? :update, Barrio %>
+    
+    
       <td><%= link_to 'Edit', edit_barrio_path(barrio) %></td>
-    <%end%>
-    <%if can? :destroy, Barrio %>
+ 
       <td><%= link_to 'Destroy', barrio, confirm: 'Are you sure?', method: :delete %></td>
-    <%end%>
+  
   </tr>
 <% end %>
 </table>
 
 <br />
-<%if can? :create, Barrio %>
+
   <%= link_to 'New Barrio', new_barrio_path %>
-<%end%>
+

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @servicio.Nombre %>
+</p>
+
+<p>
+  <b>Costoinstalacion:</b>
+  <%= @servicio.CostoInstalacion %>
+</p>
+
+<p>
+  <b>Preciomensual:</b>
+  <%= @servicio.PrecioMensual %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @servicio.Descripcion %>
+</p>
+
+<%if can? :update, Servicio %>
+<%= link_to 'Edit', edit_servicio_path(@servicio) %> |
+<%end%>
+<%= link_to 'Back', servicios_path %>

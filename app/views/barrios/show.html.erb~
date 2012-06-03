@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @barrio.Nombre %>
+</p>
+
+<p>
+  <b>Abreviacion:</b>
+  <%= @barrio.Abreviacion %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @barrio.Estado %>
+</p>
+
+<%if can? :update, Barrio%>
+    <%= link_to 'Edit', edit_barrio_path(@barrio) %> |
+<%end%>
+<%= link_to 'Back', barrios_path %>

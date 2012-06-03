@@ -1,0 +1,6 @@
+<h1>Editing parametros_generale</h1>
+
+<%= render 'form' %>
+
+  <%= link_to 'Show', @parametros_generale %><%end%> |
+<%= link_to 'Back', parametros_generales_path %>

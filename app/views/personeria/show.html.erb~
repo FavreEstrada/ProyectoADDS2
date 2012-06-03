@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @personerium.Nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @personerium.Descripcion %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @personerium.Estado %>
+</p>
+
+<%if can? :update, Personerium %>
+    <%= link_to 'Edit', edit_personerium_path(@personerium) %> |
+<%end%>
+<%= link_to 'Back', personeria_path %>

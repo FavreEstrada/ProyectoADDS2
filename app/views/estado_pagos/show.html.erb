@@ -14,7 +14,7 @@
   <b>Estado:</b>
   <%= @estado_pago.Estado %>
   </p>
-  <%if can? :update, EstadoPago %>
+
     <%= link_to 'Edit', edit_estado_pago_path(@estado_pago) %> |
-  <%end%>
+
 <%= link_to 'Back', estado_pagos_path %>
