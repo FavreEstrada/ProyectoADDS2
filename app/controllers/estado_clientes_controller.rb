@@ -2,6 +2,14 @@ class EstadoClientesController < ApplicationController
   # GET /estado_clientes
   # GET /estado_clientes.json
  before_filter :authenticate_user!, :except => [:index]
+ before_filter :validate_admin
+
+  def validate_admin
+    if !user_signed_in? || current_user.perfil.Nombre =! "Administrador"
+      redirect_to root_path
+    end
+  end
+
   def index
     @estado_clientes = EstadoCliente.all
 
