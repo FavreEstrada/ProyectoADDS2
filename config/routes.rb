@@ -28,6 +28,9 @@ ProyectoADDS2::Application.routes.draw do
   resources :barrios
 
   resources :user, :as => "users"
+  
+#  match '/' => "users#index"
+  root :to => 'perfils#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
