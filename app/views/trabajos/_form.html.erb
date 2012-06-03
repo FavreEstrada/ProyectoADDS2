@@ -1,0 +1,9 @@
+<%SimpleForm.browser_validations = false%>
+<%=simple_form_for @trabajo do |f| %>
+   <p><%= f.input :Trabajo %></p>
+   <p><%= f.input :Descripcion %></p>
+   <p><%= f.input :Estado %></p>
+   <p><%= f.input :Pago %> </p>
+   <%= f.button :submit %>
+<% end %>
+

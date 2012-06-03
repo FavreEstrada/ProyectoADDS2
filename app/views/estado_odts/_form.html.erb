@@ -1,0 +1,10 @@
+<%= simple_form_for @estado_odt do |f| %>
+    <%= f.input :Nombre %>
+    <%= f.input :Descripcion %>
+    <%= f.input :Estado, :input_html => { :checked => true }%>
+    </br>
+    <%= f.association :transitions, :label_method => :Nombre, :as => :check_boxes, :label => "Seleccione los estados siguientes:</br>" %>
+    </br>
+    <%= f.button :submit %>
+<% end %>
+                            

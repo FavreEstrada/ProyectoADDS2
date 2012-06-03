@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Nombre: MyString
+  CostoInstalacion: 9.99
+  PrecioMensual: 9.99
+  Descripcion: MyText
+
+two:
+  Nombre: MyString
+  CostoInstalacion: 9.99
+  PrecioMensual: 9.99
+  Descripcion: MyText

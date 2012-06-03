@@ -1,0 +1,7 @@
+<h1>Editing identificacion</h1>
+
+<%= render 'form' %>
+<%if can? :read, Identificacion %>
+  <%= link_to 'Show', @identificacion %>
+<%end%> |
+<%= link_to 'Back', identificacions_path %>

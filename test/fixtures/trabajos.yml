@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Trabajo: MyString
+  Descripcion: MyText
+  Estado: false
+  Pago: false
+
+two:
+  Trabajo: MyString
+  Descripcion: MyText
+  Estado: false
+  Pago: false

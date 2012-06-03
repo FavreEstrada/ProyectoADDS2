@@ -1,0 +1,41 @@
+<%= form_for(@parametros_generale) do |f| %>
+  <% if @parametros_generale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@parametros_generale.errors.count, "error") %> prohibited this parametros_generale from being saved:</h2>
+
+      <ul>
+      <% @parametros_generale.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Descuento %><br />
+    <%= f.text_field :Descuento %>
+  </div>
+  <div class="field">
+    <%= f.label :ISV %><br />
+    <%= f.text_field :ISV %>
+  </div>
+  <div class="field">
+    <%= f.label :FechaBackup %><br />
+    <%= f.date_select :FechaBackup %>
+  </div>
+  <div class="field">
+    <%= f.label :FechaCorte %><br />
+    <%= f.date_select :FechaCorte %>
+  </div>
+  <div class="field">
+    <%= f.label :FechaPago %><br />
+    <%= f.date_select :FechaPago %>
+  </div>
+  <div class="field">
+    <%= f.label :HoraBackup %><br />
+    <%= f.time_select :HoraBackup %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

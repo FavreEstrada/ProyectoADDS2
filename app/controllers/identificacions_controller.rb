@@ -1,0 +1,84 @@
+class IdentificacionsController < ApplicationController
+  # GET /identificacions
+  # GET /identificacions.json
+  before_filter :authenticate_user!, :except => [:index]
+  def index
+    @identificacions = Identificacion.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @identificacions }
+    end
+  end
+
+  # GET /identificacions/1
+  # GET /identificacions/1.json
+  def show
+    @identificacion = Identificacion.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @identificacion }
+    end
+  end
+
+  # GET /identificacions/new
+  # GET /identificacions/new.json
+  def new
+    @identificacion = Identificacion.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @identificacion }
+    end
+  end
+
+  # GET /identificacions/1/edit
+  def edit
+    @identificacion = Identificacion.find(params[:id])
+  end
+
+  # POST /identificacions
+  # POST /identificacions.json
+  def create
+    @identificacion = Identificacion.new(params[:identificacion])
+
+    respond_to do |format|
+      if @identificacion.save
+        format.html { redirect_to @identificacion, notice: 'Identificacion was successfully created.' }
+        format.json { render json: @identificacion, status: :created, location: @identificacion }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @identificacion.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /identificacions/1
+  # PUT /identificacions/1.json
+  def update
+    @identificacion = Identificacion.find(params[:id])
+
+    respond_to do |format|
+      if @identificacion.update_attributes(params[:identificacion])
+        format.html { redirect_to @identificacion, notice: 'Identificacion was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @identificacion.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /identificacions/1
+  # DELETE /identificacions/1.json
+  def destroy
+    @identificacion = Identificacion.find(params[:id])
+    @identificacion.destroy
+
+    respond_to do |format|
+      format.html { redirect_to identificacions_url }
+      format.json { head :no_content }
+    end
+  end
+end

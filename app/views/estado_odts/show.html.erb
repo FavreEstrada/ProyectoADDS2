@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @estado_odt.Nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @estado_odt.Descripcion %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @estado_odt.Estado %>
+</p>
+
+<%if can? :update, EstadoOdt %>
+  <%= link_to 'Edit', edit_estado_odt_path(@estado_odt) %>
+<%end%> |
+<%= link_to 'Back', estado_odts_path %>

@@ -1,0 +1,9 @@
+<%SimpleForm.browser_validations = false%>
+<%=simple_form_for @servicio do |f| %>
+   <p><%= f.input :Nombre %></p>
+   <p><%= f.input :CostoInstalacion %></p>
+   <p><%= f.input :PrecioMensual %></p>
+   <p><%= f.input :Descripcion %> </p>
+   <%= f.button :submit %>
+<% end %>
+

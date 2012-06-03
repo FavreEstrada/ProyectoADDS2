@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombretable:</b>
+  <%= @log.NombreTable %>
+</p>
+
+<p>
+  <b>Campoafectado:</b>
+  <%= @log.CampoAfectado %>
+</p>
+
+<p>
+  <b>Valoranterior:</b>
+  <%= @log.ValorAnterior %>
+</p>
+
+<p>
+  <b>Valoractual:</b>
+  <%= @log.ValorActual %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @log.Fecha %>
+</p>
+
+<p>
+  <b>Hora:</b>
+  <%= @log.Hora %>
+</p>
+
+<p>
+  <b>Usuario:</b>
+  <%= @log.Usuario %>
+</p>
+
+
+<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Back', logs_path %>

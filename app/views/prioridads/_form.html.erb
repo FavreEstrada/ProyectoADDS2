@@ -1,0 +1,8 @@
+<%SimpleForm.browser_validations = false%>
+<%=simple_form_for @prioridad do |f| %>
+   <p><%= f.input :Nombre %></p>
+   <p><%= f.input :Descripcion %></p>
+   <p><%= f.input :Estado %></p>
+   <%= f.button :submit %>
+<% end %>
+                                

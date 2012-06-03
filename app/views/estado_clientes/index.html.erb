@@ -1,0 +1,34 @@
+<h1>Listing estado_clientes</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Estado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @estado_clientes.each do |estado_cliente| %>
+  <tr>
+    <td><%= estado_cliente.Nombre %></td>
+    <td><%= estado_cliente.Descripcion %></td>
+    <td><%= estado_cliente.Estado %></td>
+    <%if can? :read, EstadoCliente %>
+      <td><%= link_to 'Show', estado_cliente %></td>
+    <%end%>
+    <%if can? :update, EstadoCliente %>
+        <td><%= link_to 'Edit', edit_estado_cliente_path(estado_cliente) %></td>
+    <%end%>
+    <%if can? :destroy, EstadoCliente %>
+        <td><%= link_to 'Destroy', estado_cliente, confirm: 'Are you sure?', method: :delete %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if can? :create, EstadoCliente %>
+  <%= link_to 'New Estado cliente', new_estado_cliente_path %>
+<%end%>

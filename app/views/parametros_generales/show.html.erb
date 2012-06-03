@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descuento:</b>
+  <%= @parametros_generale.Descuento %>
+</p>
+
+<p>
+  <b>Isv:</b>
+  <%= @parametros_generale.ISV %>
+</p>
+
+<p>
+  <b>Fechabackup:</b>
+  <%= @parametros_generale.FechaBackup %>
+</p>
+
+<p>
+  <b>Fechacorte:</b>
+  <%= @parametros_generale.FechaCorte %>
+</p>
+
+<p>
+  <b>Fechapago:</b>
+  <%= @parametros_generale.FechaPago %>
+</p>
+
+<p>
+  <b>Horabackup:</b>
+  <%= @parametros_generale.HoraBackup %>
+</p>
+
+<% if can? :update, ParametrosGenerale %>
+    <%= link_to 'Edit', edit_parametros_generale_path(@parametros_generale) %> |
+<% end %>
+<%= link_to 'Back', parametros_generales_path %>

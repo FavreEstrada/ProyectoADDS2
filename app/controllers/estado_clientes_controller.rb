@@ -1,0 +1,84 @@
+class EstadoClientesController < ApplicationController
+  # GET /estado_clientes
+  # GET /estado_clientes.json
+ before_filter :authenticate_user!, :except => [:index]
+  def index
+    @estado_clientes = EstadoCliente.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @estado_clientes }
+    end
+  end
+
+  # GET /estado_clientes/1
+  # GET /estado_clientes/1.json
+  def show
+    @estado_cliente = EstadoCliente.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @estado_cliente }
+    end
+  end
+
+  # GET /estado_clientes/new
+  # GET /estado_clientes/new.json
+  def new
+    @estado_cliente = EstadoCliente.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @estado_cliente }
+    end
+  end
+
+  # GET /estado_clientes/1/edit
+  def edit
+    @estado_cliente = EstadoCliente.find(params[:id])
+  end
+
+  # POST /estado_clientes
+  # POST /estado_clientes.json
+  def create
+    @estado_cliente = EstadoCliente.new(params[:estado_cliente])
+
+    respond_to do |format|
+      if @estado_cliente.save
+        format.html { redirect_to @estado_cliente, notice: 'Estado cliente was successfully created.' }
+        format.json { render json: @estado_cliente, status: :created, location: @estado_cliente }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @estado_cliente.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /estado_clientes/1
+  # PUT /estado_clientes/1.json
+  def update
+    @estado_cliente = EstadoCliente.find(params[:id])
+
+    respond_to do |format|
+      if @estado_cliente.update_attributes(params[:estado_cliente])
+        format.html { redirect_to @estado_cliente, notice: 'Estado cliente was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @estado_cliente.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /estado_clientes/1
+  # DELETE /estado_clientes/1.json
+  def destroy
+    @estado_cliente = EstadoCliente.find(params[:id])
+    @estado_cliente.destroy
+
+    respond_to do |format|
+      format.html { redirect_to estado_clientes_url }
+      format.json { head :no_content }
+    end
+  end
+end

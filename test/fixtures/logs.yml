@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  NombreTable: MyString
+  CampoAfectado: MyString
+  ValorAnterior: MyString
+  ValorActual: MyString
+  Fecha: 2012-05-24
+  Hora: 2012-05-24 04:12:21
+  Usuario: MyString
+
+two:
+  NombreTable: MyString
+  CampoAfectado: MyString
+  ValorAnterior: MyString
+  ValorActual: MyString
+  Fecha: 2012-05-24
+  Hora: 2012-05-24 04:12:21
+  Usuario: MyString

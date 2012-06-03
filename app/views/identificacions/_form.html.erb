@@ -1,0 +1,8 @@
+ 
+<% SimpleForm.browser_validations = false %>
+<%=simple_form_for @identificacion do |f| %>
+   <p><%= f.input :TipoIdentificacion %></p>
+   <p><%= f.input :NumeroIdentificacion %></p>
+   <%= f.button :submit %>
+<% end %>
+                   

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Descuento: 9.99
+  ISV: 9.99
+  FechaBackup: 2012-05-24
+  FechaCorte: 2012-05-24
+  FechaPago: 2012-05-24
+  HoraBackup: 2012-05-24 04:14:19
+
+two:
+  Descuento: 9.99
+  ISV: 9.99
+  FechaBackup: 2012-05-24
+  FechaCorte: 2012-05-24
+  FechaPago: 2012-05-24
+  HoraBackup: 2012-05-24 04:14:19

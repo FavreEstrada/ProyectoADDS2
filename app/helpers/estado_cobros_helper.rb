@@ -1,0 +1,2 @@
+module EstadoCobrosHelper
+end

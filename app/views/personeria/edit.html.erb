@@ -1,0 +1,7 @@
+<h1>Editing personerium</h1>
+
+<%= render 'form' %>
+
+<% if can? :read, Personerium %>
+  <%= link_to 'Show', @personerium %><%end%> |
+<%= link_to 'Back', personeria_path %>

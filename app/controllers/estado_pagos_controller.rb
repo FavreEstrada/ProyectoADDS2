@@ -1,0 +1,84 @@
+class EstadoPagosController < ApplicationController
+  # GET /estado_pagos
+  # GET /estado_pagos.json
+ before_filter :authenticate_user!, :except => [:index]
+  def index
+    @estado_pagos = EstadoPago.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @estado_pagos }
+    end
+  end
+
+  # GET /estado_pagos/1
+  # GET /estado_pagos/1.json
+  def show
+    @estado_pago = EstadoPago.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @estado_pago }
+    end
+  end
+
+  # GET /estado_pagos/new
+  # GET /estado_pagos/new.json
+  def new
+    @estado_pago = EstadoPago.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @estado_pago }
+    end
+  end
+
+  # GET /estado_pagos/1/edit
+  def edit
+    @estado_pago = EstadoPago.find(params[:id])
+  end
+
+  # POST /estado_pagos
+  # POST /estado_pagos.json
+  def create
+    @estado_pago = EstadoPago.new(params[:estado_pago])
+
+    respond_to do |format|
+      if @estado_pago.save
+        format.html { redirect_to @estado_pago, notice: 'Estado pago was successfully created.' }
+        format.json { render json: @estado_pago, status: :created, location: @estado_pago }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @estado_pago.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /estado_pagos/1
+  # PUT /estado_pagos/1.json
+  def update
+    @estado_pago = EstadoPago.find(params[:id])
+
+    respond_to do |format|
+      if @estado_pago.update_attributes(params[:estado_pago])
+        format.html { redirect_to @estado_pago, notice: 'Estado pago was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @estado_pago.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /estado_pagos/1
+  # DELETE /estado_pagos/1.json
+  def destroy
+    @estado_pago = EstadoPago.find(params[:id])
+    @estado_pago.destroy
+
+    respond_to do |format|
+      format.html { redirect_to estado_pagos_url }
+      format.json { head :no_content }
+    end
+  end
+end

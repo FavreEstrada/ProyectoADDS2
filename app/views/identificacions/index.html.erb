@@ -1,0 +1,32 @@
+<h1>Listing identificacions</h1>
+
+<table>
+  <tr>
+    <th>Tipoidentificacion</th>
+    <th>Numeroidentificacion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @identificacions.each do |identificacion| %>
+  <tr>
+    <td><%= identificacion.TipoIdentificacion %></td>
+    <td><%= identificacion.NumeroIdentificacion %></td>
+    <% if can? :read, Identificacion %>
+        <td><%= link_to 'Show', identificacion %></td>
+    <%end%>
+    <%if can? :update, Identificacion %>
+        <td><%= link_to 'Edit', edit_identificacion_path(identificacion) %></td>
+    <%end%>
+    <% if can? :destroy, Identificacion %>
+        <td><%= link_to 'Destroy', identificacion, confirm: 'Are you sure?', method: :delete %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if can? :create, Identificacion %>
+  <%= link_to 'New Identificacion', new_identificacion_path %>
+<%end%> 

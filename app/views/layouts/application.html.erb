@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ProyectoADDS2</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<bodyi
+  <% if user_signed_in?%>>
+    <%= link_to 'Cerrar sesion', destroy_user_session_path, :method => "delete"%>
+  <%else%>
+     <p> <%= link_to 'Sign_in', new_user_session_path %> | <%= link_to 'Sign_    up', new_user_registration_path %>
+  <%end%>
+  
+  <%= yield %>
+
+</body>
+</html>
