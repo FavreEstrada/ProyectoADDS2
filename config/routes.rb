@@ -1,4 +1,6 @@
 ProyectoADDS2::Application.routes.draw do
+  resources :perfils
+
   devise_for :users
 
   resources :estado_clientes
@@ -25,6 +27,7 @@ ProyectoADDS2::Application.routes.draw do
 
   resources :barrios
 
+  resources :user, :as => "users"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

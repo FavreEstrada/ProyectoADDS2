@@ -1,0 +1,7 @@
+<%= simple_form_for @perfil do |f| %>
+      <%= f.input :Nombre %>
+      <%= f.input :Descripcion %>
+      <%= f.association :permisos, :label_method => :Nombre, :as => :check_boxes, :label => "Seleccione los permisos" %>
+      <%= f.button :submit %>
+                     
+<% end %>
