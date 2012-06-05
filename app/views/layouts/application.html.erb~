@@ -23,7 +23,7 @@
 				    	<li> <a href="#">Buscar/Modificar Cliente</a></li>
 				</ul>
 			</li>
-			
+
 			<li><a href="#">Cobros</a>
 				<ul>
 					<li><a href="#">Cobros a Realizar</a></li>
@@ -101,11 +101,13 @@
 					</li>
 					<li><a href="#">Servicios</a>
 						<ul>
+							<% if current_user.perfil.permisos.contains? ("Crear Servicios")%>
 							<li><%= link_to 'Agregar Servicio', new_servicio_path %></li>
+							<% end%>
 							<li><%= link_to 'Modificar Servicio', servicios_path %></li>
 						</ul>
 					</li>
-					
+
 					<li><a href="#">Usuarios</a>
 						<ul>
 							<li><a href="#">Crear Perfil</a></li>
@@ -114,18 +116,19 @@
 							<li><a href="#">Modificar Usuario</a></li>
 						</ul>
 					</li>
-					
-					
+
+
 				</ul>				
-			</li>
-			<%end%>
+                </li>
+                <%end%>
+                
 			<%if user_signed_in?%>
 				<li> <%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => "delete" %> </li>
 			<%else%>
 				<li> <%= link_to 'Iniciar Sesion', new_user_session_path%> </li>
 			<%end%>
 		</ul>
-						
+
 	</div>
 
 

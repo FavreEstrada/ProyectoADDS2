@@ -1,7 +1,8 @@
 class BarriosController < ApplicationController
   # GET /barrios
   # GET /barrios.json
- #before_filter :authenticate_user!, :except => [:index]
+ 
+#before_filter :authenticate_user!, :except => [:index]
   before_filter :validate_admin
 
   def validate_admin

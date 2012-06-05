@@ -23,7 +23,7 @@
 				    	<li> <a href="#">Buscar/Modificar Cliente</a></li>
 				</ul>
 			</li>
-			
+
 			<li><a href="#">Cobros</a>
 				<ul>
 					<li><a href="#">Cobros a Realizar</a></li>
@@ -47,31 +47,49 @@
 					<li><a href="#">Solicitudes Rechazadas</a></li>
 				</ul>				
 			</li>
-			<%if user_signed_in? && current_user.perfil.Nombre == "Administrador"%>
+		    <%if user_signed_in? %>	
 			<li><a href="#">Parametrizaciones</a>
 				<ul>
 					<li><a href="#">Barrios y Colonias</a>
-						<ul>
-							<li><%= link_to 'Agregar Barrio o Colonia', new_barrio_path %></li>
-							<li><%= link_to 'Modificar Barrio o Colonia', barrios_path %></li>
+                    <ul>
+                      <%if current_user.perfil.permisos.exists?(:Nombre => "Crear Barrio")%>
+                        <li><%= link_to 'Agregar Barrio o Colonia', new_barrio_path %></li>
+                      <%end%>
+                      <%if current_user.perfil.permisos.exists?(:Nombre => "Modificar Barrio")%>
+                        <li><%= link_to 'Modificar Barrio o Colonia', barrios_path %></li>
+                      <%end%>
 						</ul>
 					</li>
 					<li><a href="#">Cobros</a>
-						<ul>
-							<li><a href="#">Agregar Cobrador</a></li>
-							<li><%= link_to 'Agregar Estado de Cobro', new_estado_cobro_path %></li>
-							<li><a href="#">Modificar Cobrador</a></li>
-							<li><%= link_to 'Modificar Estado de Cobro', estado_cobros_path %></li>
+                    <ul>
+                      <%if current_user.perfil.permisos.exists?(:Nombre => "Crear Estado de Cobro")%>
+                         <li><%= link_to 'Agregar Estado de Cobro', new_estado_cobro_path %></li>
+                      <%end%>
+                      <%if current_user.perfil.permisos.exists?(:Nombre => "Modificar Estado de Cobro")%>
+                         <li><%= link_to 'Modificar Estado de Cobro', estado_cobros_path %></li>
+                      <%end%>
 						</ul>
 					</li>
 					<li><a href="#">Clientes</a>
-						<ul>
-							<li><%= link_to 'Agregar Estado del Cliente', new_estado_cliente_path %></li>
-							<li><%= link_to 'Agregar Tipo de Identificación', new_identificacion_path %></li>
-							<li><%= link_to 'Agregar Tipo de Personeria', new_personerium_path %></li>
-							<li><%= link_to 'Modificar Estado del Cliente', estado_clientes_path %></li>
-							<li><%= link_to 'Modificar Tipo de Identificación', identificacions_path %></li>
-							<li><%= link_to 'Modificar Tipo de Personeria', personeria_path %></li>
+                    <ul>
+                            <%if current_user.perfil.permisos.exists?(:Nombre => "Crear Estado de Cliente")%>
+                              <li><%= link_to 'Agregar Estado del Cliente', new_estado_cliente_path %></li>
+                            <%end%>
+                            <%if current_user.perfil.permisos.exists?(:Nombre => "Crear Identificaciones")%>
+                              <li><%= link_to 'Agregar Tipo de Identificación', new_identificacion_path %></li>
+                            <%end%>
+                            <%if current_user.perfil.permisos.exists?(:Nombre => "Crear Personeria")%>
+                              <li><%= link_to 'Agregar Tipo de Personeria', new_personerium_path %></li>
+                            <%end%>
+                            <%if current_user.perfil.permisos.exists?(:Nombre => "Modificar Estado de Cliente")%>
+                              <li><%= link_to 'Modificar Estado del Cliente', estado_clientes_path %></li>
+                            <%end%>
+                            <%if current_user.perfil.permisos.exists?(:Nombre => "Modificar Identificaciones")%>
+                              <li><%= link_to 'Modificar Tipo de Identificación', identificacions_path %></li>
+                            <%end%>
+                            <%if current_user.perfil.permisos.exists?(:Nombre => "Modificar Personeria")%>
+                              <li><%= link_to 'Modificar Tipo de Personeria', personeria_path %></li>
+                            <%end%>
 						</ul>
 					</li>
 					<li><a href="#">Backups</a>
@@ -83,11 +101,9 @@
 						<ul>
 							<li><%= link_to 'Agregar Estado de Orden de Trabajo', new_estado_odt_path %></li>
 							<li><%= link_to 'Agregar Nivel de Prioridad', new_prioridad_path %></li>
-							<li><a href="#">Agregar Tecnico</a></li>
 							<li><%= link_to 'Agregar Tipo de Trabajo a Realizar', new_trabajo_path %></li>
 							<li><%= link_to 'Modificar Estado de Orden de Trabajo', estado_odts_path %></li>
 							<li><%= link_to 'Modificar Nivel de Prioridad', prioridads_path %></li>
-							<li><a href="#">Modificar Tecnico</a></li>
 							<li><%= link_to 'Modificar Tipo de Trabajo a Realizar', trabajos_path %></li>
 						</ul>
 					</li>
@@ -101,11 +117,13 @@
 					</li>
 					<li><a href="#">Servicios</a>
 						<ul>
-							<li><%= link_to 'Agregar Servicio', new_servicio_path %></li>
+							<% if current_user.perfil.permisos.exists? ("Crear Servicios")%>
+							    <li><%= link_to 'Agregar Servicio', new_servicio_path %></li>
+							<% end%>
 							<li><%= link_to 'Modificar Servicio', servicios_path %></li>
 						</ul>
 					</li>
-					
+
 					<li><a href="#">Usuarios</a>
 						<ul>
 							<li><a href="#">Crear Perfil</a></li>
@@ -114,19 +132,18 @@
 							<li><a href="#">Modificar Usuario</a></li>
 						</ul>
 					</li>
-					
-					
+
+
 				</ul>				
                 </li>
-                <%end%>
-                
+             <%end%>
 			<%if user_signed_in?%>
 				<li> <%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => "delete" %> </li>
 			<%else%>
 				<li> <%= link_to 'Iniciar Sesion', new_user_session_path%> </li>
 			<%end%>
 		</ul>
-						
+
 	</div>
 
 
