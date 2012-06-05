@@ -47,7 +47,7 @@
 					<li><a href="#">Solicitudes Rechazadas</a></li>
 				</ul>				
 			</li>
-
+			<%if user_signed_in? && current_user.perfil.Nombre == "Administrador"%>
 			<li><a href="#">Parametrizaciones</a>
 				<ul>
 					<li><a href="#">Barrios y Colonias</a>
@@ -105,7 +105,7 @@
 							<li><%= link_to 'Modificar Servicio', servicios_path %></li>
 						</ul>
 					</li>
-					<%if user_signed_in? && current_user.perfil.Nombre == "Administrador"%>
+					
 					<li><a href="#">Usuarios</a>
 						<ul>
 							<li><a href="#">Crear Perfil</a></li>
@@ -114,10 +114,11 @@
 							<li><a href="#">Modificar Usuario</a></li>
 						</ul>
 					</li>
-					<%end%>
+					
 					
 				</ul>				
 			</li>
+			<%end%>
 			<%if user_signed_in?%>
 				<li> <%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => "delete" %> </li>
 			<%else%>

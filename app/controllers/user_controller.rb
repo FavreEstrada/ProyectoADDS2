@@ -1,4 +1,16 @@
 class UserController < ApplicationController
+ before_filter :authenticate_user!, :except => [:index]
+  before_filter :validate_admin
+
+  def validate_admin
+    if !user_signed_in? || current_user.perfil.Nombre =! "Administrador"
+	
+	redirect_to root_path
+    else
+      current_user.perfil.Nombre = "Administrador"
+    end
+  end
+ 
   def index
     if user_signed_in? && current_user.perfil.Nombre == "Administrador"  
         @users = User.all
