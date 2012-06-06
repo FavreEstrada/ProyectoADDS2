@@ -1,0 +1,33 @@
+<%= form_for(@cliente_juridico) do |f| %>
+  <% if @cliente_juridico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cliente_juridico.errors.count, "error") %> prohibited this cliente_juridico from being saved:</h2>
+
+      <ul>
+      <% @cliente_juridico.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombreEmpresa %><br />
+    <%= f.text_field :nombreEmpresa %>
+  </div>
+  <div class="field">
+    <%= f.label :Cargo %><br />
+    <%= f.text_field :Cargo %>
+  </div>
+  <div class="field">
+    <%= f.label :Reponsable %><br />
+    <%= f.text_field :Reponsable %>
+  </div>
+  <div class="field">
+    <%= f.label :Fax %><br />
+    <%= f.text_field :Fax %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
