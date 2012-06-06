@@ -1,4 +1,4 @@
 class Permiso < ActiveRecord::Base
 
-    belongs_to :perfil
+    has_and_belongs_to_many :perfil
 end

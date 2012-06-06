@@ -93,8 +93,10 @@
 						</ul>
 					</li>
 					<li><a href="#">Backups</a>
-						<ul>
-							<li><a href="#">Modificar Fecha de Backup</a></li>
+                    <ul>
+                      <%if current_user.perfil.permisos.exists?(:Nombre => "Modificar Parametros Generales")%>
+                        <li> <%= link_to 'Modificar hora de backup', edit_parametros_generale_path(:id => 2) %></li>
+                      <%end%>
 						</ul>
 					</li>
 					<li><a href="#">Ordenes de Trabajo</a>
