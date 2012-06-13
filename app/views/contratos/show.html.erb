@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Numero de contrato:</b>
+  <%= @contrato.id %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @contrato.cliente_juridico.NombreEmpresa %>
+</p>
+
+<p>
+  <b>Barrio:</b>
+  <%= @contrato.barrio.Nombre %>
+</p>
+
+<p>
+  <b>Servicio:</b>
+  <%= @contrato.servicio.Nombre %>
+</p>
+
+<p>
+  <b>Direccion:</b>
+  <%= @contrato.Direccion %>
+</p>
+
+<p>
+  <b>Costoinstalacion:</b>
+  <%= @contrato.CostoInstalacion %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @contrato.Estado %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_contrato_path(@contrato) %> |
+<%= link_to 'Back', contratos_path %>

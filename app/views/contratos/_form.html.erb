@@ -1,0 +1,9 @@
+<%= simple_form_for @contrato do |f| %>
+    <%= f.association :cliente_juridico, :collection => ClienteJuridico.all, :label_method => :NombreEmpresa, :label => "Seleccione el cliente" %>
+    <%= f.association :barrio, :collection => Barrio.all, :label_method => :Nombre, :label => "Seleccione el barrio" %>
+    <%= f.input :Direccion %>
+    <%= f.association :servicio, :collection => Servicio.all, :label_method => :Nombre, :label => "Seleccione el servicio"%>
+    <%= f.input :CostoInstalacion %>
+    <%= f.input :Estado, :input_html => {:checked => true} %>
+    <%= f.button :submit %>
+<%end%>

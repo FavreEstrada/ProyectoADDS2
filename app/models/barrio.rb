@@ -1,3 +1,4 @@
 class Barrio < ActiveRecord::Base
-    validates :Nombre, :presence => true
+  has_many :contratos  
+  validates :Nombre, :presence => true
 end

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Direccion: MyString
+  Estado: false
+  CostoInstalacion: 9.99
+
+two:
+  Direccion: MyString
+  Estado: false
+  CostoInstalacion: 9.99
