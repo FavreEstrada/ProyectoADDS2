@@ -1,36 +1,16 @@
-<%= form_for(@cliente_juridico) do |f| %>
-  <% if @cliente_juridico.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@cliente_juridico.errors.count, "error") %> prohibited this cliente_juridico from being saved:</h2>
-
-      <ul>
-      <% @cliente_juridico.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= simple_form_for @cliente_juridico do |f| %>
+  <div class = "inputs">
+      <%= f.association :identificacion, :collection => Identificacion.all, :label_method => :TipoIdentificacion, :label => "Identificacion: " %>
+      <%= f.input :numeroIdentificacion %>
+      <%= f.input :NombreEmpresa %>
+      <%= f.input :Cargo %>
+      <%= f.input :Responsable %>
+      <%= f.input :fax %>
+      <%= f.input :email %>
+      <%= f.input :Direccion%>
+      <%= f.association :estado_cliente, :collection => EstadoCliente.all, :label_method => :Nombre, :label => "Estado de Cliente: " %>
+      <%= f.input :Observaciones %>
+      <%= f.button :submit %>
+      
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :NombreEmpresa %><br />
-    <%= f.text_field :NombreEmpresa %>
-  </div>
-  <div class="field">
-    <%= f.label :Cargo %><br />
-    <%= f.text_field :Cargo %>
-  </div>
-  <div class="field">
-    <%= f.label :Responsable %><br />
-    <%= f.text_field :Responsable %>
-  </div>
-  <div class="field">
-    <%= f.label :fax %><br />
-    <%= f.text_field :fax %>
-  </div> 
-
-  <%= f.label :Direccion %>
-  <%= f.text_field :Direccion %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%end%>
