@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613091942) do
+ActiveRecord::Schema.define(:version => 20120613105910) do
 
   create_table "barrios", :force => true do |t|
     t.string   "Nombre"
@@ -19,6 +19,25 @@ ActiveRecord::Schema.define(:version => 20120613091942) do
     t.boolean  "Estado"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "cliente_juridicos", :force => true do |t|
+    t.string   "NombreEmpresa"
+    t.string   "Cargo"
+    t.string   "Responsable"
+    t.string   "fax"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "clientes", :force => true do |t|
+    t.string   "Direccion"
+    t.text     "Observaciones"
+    t.string   "email"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "heir_id"
+    t.string   "heir_type"
   end
 
   create_table "estado_clientes", :force => true do |t|

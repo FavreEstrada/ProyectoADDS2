@@ -12,21 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombreEmpresa %><br />
-    <%= f.text_field :nombreEmpresa %>
+    <%= f.label :NombreEmpresa %><br />
+    <%= f.text_field :NombreEmpresa %>
   </div>
   <div class="field">
     <%= f.label :Cargo %><br />
     <%= f.text_field :Cargo %>
   </div>
   <div class="field">
-    <%= f.label :Reponsable %><br />
-    <%= f.text_field :Reponsable %>
+    <%= f.label :Responsable %><br />
+    <%= f.text_field :Responsable %>
   </div>
   <div class="field">
-    <%= f.label :Fax %><br />
-    <%= f.text_field :Fax %>
-  </div>
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </div> 
+
+  <%= f.label :Direccion %>
+  <%= f.text_field :Direccion %>
   <div class="actions">
     <%= f.submit %>
   </div>

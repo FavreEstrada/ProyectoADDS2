@@ -1,4 +1,6 @@
 ProyectoADDS2::Application.routes.draw do
+  resources :cliente_juridicos
+
   resources :perfils
 
   devise_for :users

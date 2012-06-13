@@ -4,7 +4,7 @@
   <tr>
     <th>Nombreempresa</th>
     <th>Cargo</th>
-    <th>Reponsable</th>
+    <th>Responsable</th>
     <th>Fax</th>
     <th></th>
     <th></th>
@@ -13,10 +13,10 @@
 
 <% @cliente_juridicos.each do |cliente_juridico| %>
   <tr>
-    <td><%= cliente_juridico.nombreEmpresa %></td>
+    <td><%= cliente_juridico.NombreEmpresa %></td>
     <td><%= cliente_juridico.Cargo %></td>
-    <td><%= cliente_juridico.Reponsable %></td>
-    <td><%= cliente_juridico.Fax %></td>
+    <td><%= cliente_juridico.Responsable %></td>
+    <td><%= cliente_juridico.fax %></td>
     <td><%= link_to 'Show', cliente_juridico %></td>
     <td><%= link_to 'Edit', edit_cliente_juridico_path(cliente_juridico) %></td>
     <td><%= link_to 'Destroy', cliente_juridico, confirm: 'Are you sure?', method: :delete %></td>
