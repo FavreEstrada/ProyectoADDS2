@@ -1,3 +1,4 @@
 class Identificacion < ActiveRecord::Base
-    validates :TipoIdentificacion, :NumeroIdentificacion, :presence => true
+    validates :TipoIdentificacion, :presence => true
+    belongs_to :personerium
 end

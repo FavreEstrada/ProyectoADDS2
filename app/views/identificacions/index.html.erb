@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Tipoidentificacion</th>
-    <th>Numeroidentificacion</th>
+    <th>Personerium</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +12,7 @@
 <% @identificacions.each do |identificacion| %>
   <tr>
     <td><%= identificacion.TipoIdentificacion %></td>
-    <td><%= identificacion.NumeroIdentificacion %></td>
+    <td><%= identificacion.personerium.Nombre %></td>
 
         <td><%= link_to 'Show', identificacion %></td>
 

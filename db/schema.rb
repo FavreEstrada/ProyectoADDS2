@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606002345) do
+ActiveRecord::Schema.define(:version => 20120613091942) do
 
   create_table "barrios", :force => true do |t|
     t.string   "Nombre"
@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(:version => 20120606002345) do
 
   create_table "identificacions", :force => true do |t|
     t.string   "TipoIdentificacion"
-    t.string   "NumeroIdentificacion"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "personerium_id"
   end
 
   create_table "logs", :force => true do |t|
