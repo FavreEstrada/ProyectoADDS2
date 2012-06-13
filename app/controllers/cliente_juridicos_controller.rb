@@ -25,7 +25,7 @@ class ClienteJuridicosController < ApplicationController
   # GET /cliente_juridicos/new.json
   def new
     @cliente_juridico = ClienteJuridico.new
-
+    @personeria = Personerium.where('Nombre = "Juridica"')
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @cliente_juridico }
@@ -40,6 +40,7 @@ class ClienteJuridicosController < ApplicationController
   # POST /cliente_juridicos
   # POST /cliente_juridicos.json
   def create
+    @personeria = Personerium.where('Nombre = "Juridica"')
     @cliente_juridico = ClienteJuridico.new(params[:cliente_juridico])
 
     respond_to do |format|
