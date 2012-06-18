@@ -1,0 +1,27 @@
+<h1>Listing orden_cobros</h1>
+
+<table>
+  <tr>
+    <th>Fechapago</th>
+    <th>Cantidadapagar</th>
+    <th>Numrecibo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orden_cobros.each do |orden_cobro| %>
+  <tr>
+    <td><%= orden_cobro.FechaPago %></td>
+    <td><%= orden_cobro.CantidadAPagar %></td>
+    <td><%= orden_cobro.NumRecibo %></td>
+    <td><%= link_to 'Show', orden_cobro %></td>
+    <td><%= link_to 'Edit', edit_orden_cobro_path(orden_cobro) %></td>
+    <td><%= link_to 'Destroy', orden_cobro, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Orden cobro', new_orden_cobro_path %>

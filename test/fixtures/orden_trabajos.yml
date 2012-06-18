@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  FechaPago: 
+  CantidadAPagar: 
+  TrabajoARealizar: 
+  Observaciones: 
+  Comentarios: 
+  DescripcionTrabajo: 
+  NumRecibo: 
+
+two:
+  FechaPago: 
+  CantidadAPagar: 
+  TrabajoARealizar: 
+  Observaciones: 
+  Comentarios: 
+  DescripcionTrabajo: 
+  NumRecibo: 

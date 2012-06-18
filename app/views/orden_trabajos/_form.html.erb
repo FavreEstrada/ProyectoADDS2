@@ -1,0 +1,45 @@
+<%= form_for(@orden_trabajo) do |f| %>
+  <% if @orden_trabajo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orden_trabajo.errors.count, "error") %> prohibited this orden_trabajo from being saved:</h2>
+
+      <ul>
+      <% @orden_trabajo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :FechaPago %><br />
+    <%= f.text_field :FechaPago %>
+  </div>
+  <div class="field">
+    <%= f.label :CantidadAPagar %><br />
+    <%= f.text_field :CantidadAPagar %>
+  </div>
+  <div class="field">
+    <%= f.label :TrabajoARealizar %><br />
+    <%= f.text_field :TrabajoARealizar %>
+  </div>
+  <div class="field">
+    <%= f.label :Observaciones %><br />
+    <%= f.text_field :Observaciones %>
+  </div>
+  <div class="field">
+    <%= f.label :Comentarios %><br />
+    <%= f.text_field :Comentarios %>
+  </div>
+  <div class="field">
+    <%= f.label :DescripcionTrabajo %><br />
+    <%= f.text_field :DescripcionTrabajo %>
+  </div>
+  <div class="field">
+    <%= f.label :NumRecibo %><br />
+    <%= f.text_field :NumRecibo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

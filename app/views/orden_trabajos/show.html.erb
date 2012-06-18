@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fechapago:</b>
+  <%= @orden_trabajo.FechaPago %>
+</p>
+
+<p>
+  <b>Cantidadapagar:</b>
+  <%= @orden_trabajo.CantidadAPagar %>
+</p>
+
+<p>
+  <b>Trabajoarealizar:</b>
+  <%= @orden_trabajo.TrabajoARealizar %>
+</p>
+
+<p>
+  <b>Observaciones:</b>
+  <%= @orden_trabajo.Observaciones %>
+</p>
+
+<p>
+  <b>Comentarios:</b>
+  <%= @orden_trabajo.Comentarios %>
+</p>
+
+<p>
+  <b>Descripciontrabajo:</b>
+  <%= @orden_trabajo.DescripcionTrabajo %>
+</p>
+
+<p>
+  <b>Numrecibo:</b>
+  <%= @orden_trabajo.NumRecibo %>
+</p>
+
+
+<%= link_to 'Edit', edit_orden_trabajo_path(@orden_trabajo) %> |
+<%= link_to 'Back', orden_trabajos_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  FechaPago: 2012-06-14
+  CantidadAPagar: 
+  NumRecibo: 
+
+two:
+  FechaPago: 2012-06-14
+  CantidadAPagar: 
+  NumRecibo: 

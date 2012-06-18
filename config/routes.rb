@@ -1,4 +1,12 @@
 ProyectoADDS2::Application.routes.draw do
+  resources :orden_cobros
+
+  resources :historial_octs
+
+  resources :historial_odts
+
+  resources :orden_trabajos
+
   resources :contratos
 
   resources :cliente_juridicos

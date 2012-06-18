@@ -29,15 +29,15 @@
 
 			<li><a href="#">Cobros</a>
 				<ul>
-					<li><a href="#">Cobros a Realizar</a></li>
-				    	<li><a href="#">Modificar un Cobro</a></li>
+					<li> <%= link_to 'Cobros a Realizar', new_orden_cobros_path %> </li>
+				    	<li> <%= link_to 'Modificar un Cobro, orden_cobros_path %> </li>
 				</ul>				
 			</li>
 
 			<li><a href="#">Ordenes de Trabajo</a>
 				<ul>
-					<li><a href="#">Agregar Orden de Trabajo</a></li>
-					<li><a href="#">Modificar una Orden de Trabajo</a></li>
+					<li><%= link_to 'Agregar Orden de Trabajo', new_orden_trabajos_path %></li>
+					<li><%= link_to 'Modificar una Orden de Trabajo', orden_trabajos_path%></li>
 					<li><a href="#">Ver Ordenes de Trabajo Pendientes</a></li>
 				</ul>				
 			</li>

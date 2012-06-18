@@ -1,0 +1,35 @@
+<h1>Listing orden_trabajos</h1>
+
+<table>
+  <tr>
+    <th>Fechapago</th>
+    <th>Cantidadapagar</th>
+    <th>Trabajoarealizar</th>
+    <th>Observaciones</th>
+    <th>Comentarios</th>
+    <th>Descripciontrabajo</th>
+    <th>Numrecibo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orden_trabajos.each do |orden_trabajo| %>
+  <tr>
+    <td><%= orden_trabajo.FechaPago %></td>
+    <td><%= orden_trabajo.CantidadAPagar %></td>
+    <td><%= orden_trabajo.TrabajoARealizar %></td>
+    <td><%= orden_trabajo.Observaciones %></td>
+    <td><%= orden_trabajo.Comentarios %></td>
+    <td><%= orden_trabajo.DescripcionTrabajo %></td>
+    <td><%= orden_trabajo.NumRecibo %></td>
+    <td><%= link_to 'Show', orden_trabajo %></td>
+    <td><%= link_to 'Edit', edit_orden_trabajo_path(orden_trabajo) %></td>
+    <td><%= link_to 'Destroy', orden_trabajo, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Orden trabajo', new_orden_trabajo_path %>

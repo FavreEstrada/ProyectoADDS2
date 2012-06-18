@@ -1,0 +1,21 @@
+<h1>Listing historial_octs</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @historial_octs.each do |historial_oct| %>
+  <tr>
+    <td><%= link_to 'Show', historial_oct %></td>
+    <td><%= link_to 'Edit', edit_historial_oct_path(historial_oct) %></td>
+    <td><%= link_to 'Destroy', historial_oct, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Historial oct', new_historial_oct_path %>

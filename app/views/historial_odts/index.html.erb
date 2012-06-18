@@ -1,0 +1,23 @@
+<h1>Listing historial_odts</h1>
+
+<table>
+  <tr>
+    <th>Comentarios</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @historial_odts.each do |historial_odt| %>
+  <tr>
+    <td><%= historial_odt.Comentarios %></td>
+    <td><%= link_to 'Show', historial_odt %></td>
+    <td><%= link_to 'Edit', edit_historial_odt_path(historial_odt) %></td>
+    <td><%= link_to 'Destroy', historial_odt, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Historial odt', new_historial_odt_path %>
