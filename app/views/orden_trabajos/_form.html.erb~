@@ -2,7 +2,7 @@
 <%= f.association :contrato, :collection => 
 Contrato.all, :label_method => :NumRecibo, :label => "Numero de Recibo:" %>
     <%= f.association :estado_odt, :collection => EstadoOdt.all, :label_method => :EstadoOdt, :label => "Estado del Trabajo" %>
- <%= f.association :estado_prioridad, :collection => Prioridad.all, :label_method => :Prioridad, :label => "Prioridad"%>
+ <%= f.association :estado_cobros, :collection => EstadoCobros.all, :label_method => :EstadoCobro, :label => "Estado de Cobro"%>
   <% if @orden_trabajo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@orden_trabajo.errors.count, "error") %> prohibited this orden_trabajo from being saved:</h2>

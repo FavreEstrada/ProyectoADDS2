@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613134926) do
+ActiveRecord::Schema.define(:version => 20120618073107) do
 
   create_table "barrios", :force => true do |t|
     t.string   "Nombre"
@@ -40,8 +40,6 @@ ActiveRecord::Schema.define(:version => 20120613134926) do
     t.datetime "updated_at",           :null => false
     t.integer  "heir_id"
     t.string   "heir_type"
-    t.integer  "estado_cliente_id"
-    t.integer  "identificacion_id"
     t.string   "numeroIdentificacion"
   end
 
@@ -92,6 +90,27 @@ ActiveRecord::Schema.define(:version => 20120613134926) do
     t.integer  "transitionPago_id"
   end
 
+  create_table "historial_octs", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "historial_odts", :force => true do |t|
+    t.string   "Comentarios"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "historials", :force => true do |t|
+    t.time     "Hora"
+    t.date     "Fecha"
+    t.string   "NumRecibo"
+    t.decimal  "CantidadquePago"
+    t.decimal  "CantidadRestante"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "identificacions", :force => true do |t|
     t.string   "TipoIdentificacion"
     t.datetime "created_at",         :null => false
@@ -109,6 +128,26 @@ ActiveRecord::Schema.define(:version => 20120613134926) do
     t.string   "Usuario"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "orden_cobros", :force => true do |t|
+    t.date     "FechaPago"
+    t.decimal  "CantidadAPagar"
+    t.integer  "NumRecibo"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "orden_trabajos", :force => true do |t|
+    t.date     "FechaPago"
+    t.decimal  "CantidadAPagar"
+    t.string   "TrabajoARealizar"
+    t.string   "Observaciones"
+    t.string   "Comentarios"
+    t.string   "DescripcionTrabajo"
+    t.integer  "NumRecibo"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "parametros_generales", :force => true do |t|

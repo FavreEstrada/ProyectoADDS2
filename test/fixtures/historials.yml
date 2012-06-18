@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Hora: 
+  Fecha: 
+  NumRecibo: 
+  CantidadquePago: 
+  CantidadRestante: 
+
+two:
+  Hora: 
+  Fecha: 
+  NumRecibo: 
+  CantidadquePago: 
+  CantidadRestante: 

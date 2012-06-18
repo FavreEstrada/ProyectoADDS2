@@ -1,5 +1,5 @@
 class OrdenCobro < ActiveRecord::Base
-  belongs_to :contratos
+  belongs_to :contrato
   belongs_to :estado_pagos
   belongs_to :estado_cobros
   belongs_to :user

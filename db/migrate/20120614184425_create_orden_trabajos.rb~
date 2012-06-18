@@ -7,7 +7,7 @@ class CreateOrdenTrabajos < ActiveRecord::Migration
       t.string :Observaciones
       t.string :Comentarios
       t.string :DescripcionTrabajo
-      t.integer :NumRecibo
+      t.int :NumRecibo
 
       t.timestamps
     end

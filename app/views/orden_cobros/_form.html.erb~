@@ -1,8 +1,4 @@
-<%= simple_form_for @orden_cobro do |f| %>
- <%= f.association :contrato, :collection => 
-Contrato.all, :label_method => :NumRecibo, :label => "Numero de Recibo:" %>
-    <%= f.association :estado_pagos, :collection => EstadoPagos.all, :label_method => :EstadoPago, :label => "Estado de Pago" %>
- <%= f.association :estado_cobros, :collection => EstadoCobros.all, :label_method => :EstadoCobro, :label => "Estado de Cobro"%>
+<%= form_for(@orden_cobro) do |f| %>
   <% if @orden_cobro.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@orden_cobro.errors.count, "error") %> prohibited this orden_cobro from being saved:</h2>
